@@ -226,7 +226,7 @@ export default function CareersPage() {
           <div className="mt-12 text-center">
             <p className="text-lg mb-4">Don't see a position that matches your skills?</p>
             <Button variant="outline" size="lg">
-              <Link href="/contact">Submit a General Application</Link>
+              <Link href="/careers/jobs/general-application">Submit a General Application</Link>
             </Button>
           </div>
         </div>

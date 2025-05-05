@@ -21,7 +21,7 @@ export default function ApplicationSuccessPage() {
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Button className="bg-[#0db0fd] hover:bg-[#0db0fd]/90">
-          <Link href="/careers/jobs">View More Job Openings</Link>
+          <Link href="/careers">View More Job Openings</Link>
         </Button>
         <Button variant="outline" className="border-[#0db0fd] text-[#0db0fd] hover:bg-[#0db0fd]/10">
           <Link href="/">Return to Homepage</Link>

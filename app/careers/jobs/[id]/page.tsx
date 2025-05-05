@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
@@ -15,10 +15,10 @@ import { jobOpenings } from "@/lib/job-data"
 import { submitJobApplication } from "@/lib/actions"
 import AnimatedElement from "@/components/animated-element"
 import { useToast } from "@/hooks/use-toast"
+import { toast } from "@/components/ui/use-toast"
 
-export default function JobDetailPage({ params }: { params: { id: string } }) {
+export default function JobDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const router = useRouter()
-  const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     fullName: "",
@@ -28,9 +28,24 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
     portfolio: "",
     resumeFile: null as File | null,
   })
+  const [jobId, setJobId] = useState<string | null>(null)
 
-  // Find the job with the matching ID
-  const job = jobOpenings.find((job) => job.id === params.id)
+  useEffect(() => {
+    const fetchParams = async () => {
+      const unwrappedParams = await params
+      setJobId(unwrappedParams.id)
+    }
+
+    fetchParams()
+  }, [params])
+// If jobId hasn't been set yet, show loading or fallback UI
+  if (!jobId) {
+    return <div>Loading...</div>
+  }
+
+    // Find the job with the matching ID
+  const job = jobOpenings.find((job) => job.id === jobId)
+
 
   // If no job is found, show a message
   if (!job) {
@@ -103,7 +118,7 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
         <div className="absolute inset-0 bg-gradient-to-r from-background to-background/50 z-10" />
         <div className="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-20" />
         <div className="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8">
-          <Link href="/careers/jobs" className="inline-flex items-center text-[#0db0fd] mb-8 hover:underline">
+          <Link href="/careers" className="inline-flex items-center text-[#0db0fd] mb-8 hover:underline">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Job Openings
           </Link>
@@ -331,7 +346,7 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
       </section>
 
       {/* Similar Jobs */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedElement animation="fade-up" className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">Similar Positions</h2>
@@ -364,7 +379,7 @@ export default function JobDetailPage({ params }: { params: { id: string } }) {
               ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }
