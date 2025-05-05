@@ -4,116 +4,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Check, Clock, DollarSign, Heart, MapPin, Smile, Star, Users } from "lucide-react"
+import { jobOpenings } from "@/lib/job-data"
 
 export default function CareersPage() {
-  const jobOpenings = [
-    {
-      id: "senior-web-developer",
-      title: "Senior Web Developer",
-      department: "Development",
-      location: "On-site",
-      type: "Full-time",
-      // salary: "90,000 - 120,000",
-      posted: "2 weeks ago",
-      description:
-        "We're looking for an experienced web developer to join our team and help build innovative web solutions for our clients.",
-      requirements: [
-        "5+ years of experience in web development",
-        "Proficient in React, Next.js, and TypeScript",
-        "Experience with backend technologies like Node.js",
-        "Strong problem-solving skills and attention to detail",
-        "Excellent communication and teamwork abilities",
-      ],
-    },
-    {
-      id: "ui-ux-designer",
-      title: "UI/UX Designer",
-      department: "Design",
-      location: "On-Site",
-      type: "Full-time",
-      // salary: "$80,000 - $110,000",
-      posted: "1 week ago",
-      description:
-        "Join our design team to create beautiful, intuitive user interfaces and experiences for web and mobile applications.",
-      requirements: [
-        "3+ years of experience in UI/UX design",
-        "Proficiency in Figma, Adobe XD, or similar tools",
-        "Strong portfolio demonstrating user-centered design approach",
-        "Understanding of design systems and component libraries",
-        "Experience collaborating with developers to implement designs",
-      ],
-    },
-    {
-      id: "digital-marketing-specialist",
-      title: "Digital Marketing Specialist",
-      department: "Marketing",
-      location: "Hybrid",
-      type: "Full-time",
-      // salary: "$70,000 - $90,000",
-      posted: "3 days ago",
-      description:
-        "Help our clients grow their online presence through strategic digital marketing campaigns and analytics.",
-      requirements: [
-        "3+ years of experience in digital marketing",
-        "Experience with SEO, SEM, and social media marketing",
-        "Proficiency in marketing analytics tools",
-        "Strong copywriting and content creation skills",
-        "Ability to manage multiple projects and meet deadlines",
-      ],
-    },
-    {
-      id: "content-writer",
-      title: "Content Writer",
-      department: "Content",
-      location: "Remote",
-      type: "Part-time",
-      // salary: "$50,000 - $65,000",
-      posted: "5 days ago",
-      description: "Create engaging, SEO-friendly content for our clients across various industries and platforms.",
-      requirements: [
-        "2+ years of experience in content writing",
-        "Strong understanding of SEO principles",
-        "Excellent research and writing skills",
-        "Ability to adapt tone and style for different audiences",
-        "Experience with content management systems",
-      ],
-    },
-    {
-      id: "project-manager",
-      title: "Project Manager",
-      department: "Operations",
-      location: "On-Site",
-      type: "Full-time",
-      // salary: "$85,000 - $110,000",
-      posted: "1 month ago",
-      description:
-        "Lead project teams to deliver high-quality digital solutions on time and within budget for our clients.",
-      requirements: [
-        "4+ years of experience in project management",
-        "PMP certification preferred",
-        "Experience managing digital projects (web, app, marketing)",
-        "Strong leadership and communication skills",
-        "Proficiency in project management tools and methodologies",
-      ],
-    },
-    {
-      id: "video-editor",
-      title: "Video Editor",
-      department: "Production",
-      location: "Hybrid",
-      type: "Full-time",
-      // salary: "$65,000 - $85,000",
-      posted: "2 weeks ago",
-      description: "Create compelling video content for our clients' marketing campaigns, social media, and websites.",
-      requirements: [
-        "3+ years of experience in video editing",
-        "Proficiency in Adobe Premiere Pro and After Effects",
-        "Strong portfolio demonstrating video editing skills",
-        "Understanding of storytelling and pacing",
-        "Experience with motion graphics and animation a plus",
-      ],
-    },
-  ]
   const steps = [
   {
     title: "Application Review",
@@ -146,8 +39,6 @@ export default function CareersPage() {
     duration: "1 week",
   },
 ];
-
-
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -216,7 +107,7 @@ export default function CareersPage() {
       </section>
 
       {/* Company Culture */}
-      <section className="py-20 bg-accent">
+      {/* <section className="py-20 bg-accent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -279,7 +170,7 @@ export default function CareersPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Current Openings */}
       <section className="py-20">
@@ -290,8 +181,6 @@ export default function CareersPage() {
               Explore our available positions and find your perfect role
             </p>
           </div>
-
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {jobOpenings.map((job) => (
               <Card key={job.id} className="border-2 border-transparent hover:border-[#0db0fd] transition-all">
@@ -325,7 +214,7 @@ export default function CareersPage() {
                     </div>
                     <div className="pt-4">
                       <Button className="bg-[#0db0fd] hover:bg-[#0db0fd]/90 w-full">
-                        <Link href={`/careers/${job.id}`}>View Details & Apply</Link>
+                        <Link href={`/careers/jobs/${job.id}`}>View Details & Apply</Link>
                       </Button>
                     </div>
                   </div>

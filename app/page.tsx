@@ -121,12 +121,10 @@ export default function Home() {
 
   // Client logos
   const clientLogos = [
-    { name: "Client 1", logo: "/placeholder.svg?height=100&width=200&text=Client 1" },
-    { name: "Client 2", logo: "/placeholder.svg?height=100&width=200&text=Client 2" },
-    { name: "Client 3", logo: "/placeholder.svg?height=100&width=200&text=Client 3" },
-    { name: "Client 4", logo: "/placeholder.svg?height=100&width=200&text=Client 4" },
-    { name: "Client 5", logo: "/placeholder.svg?height=100&width=200&text=Client 5" },
-    { name: "Client 6", logo: "/placeholder.svg?height=100&width=200&text=Client 6" },
+    { name: "Client 1", logo: "/client_logos/arrow.png?height=100&width=200&text=Client 1" },
+    { name: "Client 2", logo: "/client_logos/scorpion.png?height=100&width=200&text=Client 2" },
+    { name: "Client 3", logo: "/client_logos/sajilo_buyer.png?height=100&width=200&text=Client 3" },
+    { name: "Client 4", logo: "/client_logos/taxcalling.png?height=100&width=200&text=Client 4" },
   ]
 
   // Testimonials data
@@ -334,6 +332,33 @@ function getRandomBlogPosts(count = 3) {
         </div>
       </section>
 
+      {/* Clients/Partners */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedElement animation="fade-up" className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold">Our Clients</h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              Trusted by leading companies across industries
+            </p>
+          </AnimatedElement>
+
+          <StaggeredAnimation
+            animation="fade-up"
+            className="flex flex-wrap justify-center items-center gap-8 md:gap-12"
+            staggerDelay={100}
+          >
+            {clientLogos.map((client, index) => (
+              <div
+                key={index}
+                className="w-32 h-20 md:w-40 md:h-24 relative grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+              >
+                <Image src={client.logo || "/placeholder.svg"} alt={client.name} fill className="object-contain" />
+              </div>
+            ))}
+          </StaggeredAnimation>
+        </div>
+      </section>
+      
       {/* Process Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -426,7 +451,7 @@ function getRandomBlogPosts(count = 3) {
       </section> */}
 
       {/* Featured Work */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedElement animation="fade-up" className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">Featured Work</h2>
@@ -494,12 +519,12 @@ function getRandomBlogPosts(count = 3) {
                   <span className="text-sm text-[#0db0fd] font-medium mb-1">{project.category}</span>
                   <h3 className="font-bold text-xl text-white mb-1">{project.title}</h3>
                   <p className="text-white/80 text-sm mb-4">Client: {project.client}</p>
-                  {/* <Link
+                  <Link
                     href={`/works/${project.title.toLowerCase().replace(/\s+/g, "-")}`}
                     className="inline-flex items-center text-white font-medium text-sm"
                   >
                     View Case Study <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link> */}
+                  </Link>
                 </div>
               </div>
             ))}
@@ -511,10 +536,10 @@ function getRandomBlogPosts(count = 3) {
             </Button>
           </AnimatedElement>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
-      <section className="py-20 bg-accent">
+      {/* <section className="py-20 bg-accent">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedElement animation="fade-up" className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">What Our Clients Say</h2>
@@ -527,34 +552,8 @@ function getRandomBlogPosts(count = 3) {
             <TestimonialsCarousel testimonials={testimonials} />
           </AnimatedElement>
         </div>
-      </section>
+      </section> */}
 
-      {/* Clients/Partners */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedElement animation="fade-up" className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold">Our Clients</h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Trusted by leading companies across industries
-            </p>
-          </AnimatedElement>
-
-          <StaggeredAnimation
-            animation="fade-up"
-            className="flex flex-wrap justify-center items-center gap-8 md:gap-12"
-            staggerDelay={100}
-          >
-            {clientLogos.map((client, index) => (
-              <div
-                key={index}
-                className="w-32 h-20 md:w-40 md:h-24 relative grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
-              >
-                <Image src={client.logo || "/placeholder.svg"} alt={client.name} fill className="object-contain" />
-              </div>
-            ))}
-          </StaggeredAnimation>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <section className="py-20 bg-accent">

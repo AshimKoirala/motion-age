@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -14,39 +15,65 @@ import AnimatedElement from "@/components/animated-element"
 import StaggeredAnimation from "@/components/staggered-animation"
 import AnimatedBackground from "@/components/animated-background"
 import TextGradient from "@/components/text-gradient"
+import { submitContactForm } from "@/lib/actions"
+import { useToast } from "@/hooks/use-toast"
+
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState({
+
+  const router = useRouter()
+  const { toast } = useToast()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     subject: "",
     message: "",
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormState((prev) => ({ ...prev, [name]: value }))
+    setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+ const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false)
+    try {
+      // Call the server action to submit the form
+      await submitContactForm({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+      })
+
+      toast({
+        title: "Message Sent",
+        description: "Thank you for your message. We'll be in touch soon!",
+      })
+
       setIsSubmitted(true)
-      setFormState({
+      setFormData({
         name: "",
         email: "",
         phone: "",
         subject: "",
         message: "",
       })
-    }, 1500)
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description: "There was an error sending your message. Please try again.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -159,7 +186,7 @@ export default function ContactPage() {
                             <Input
                               id="name"
                               name="name"
-                              value={formState.name}
+                              value={formData.name}
                               onChange={handleChange}
                               required
                               className="border-input focus:border-[#0db0fd]"
@@ -171,7 +198,7 @@ export default function ContactPage() {
                               id="email"
                               name="email"
                               type="email"
-                              value={formState.email}
+                              value={formData.email}
                               onChange={handleChange}
                               required
                               className="border-input focus:border-[#0db0fd]"
@@ -184,7 +211,7 @@ export default function ContactPage() {
                             <Input
                               id="phone"
                               name="phone"
-                              value={formState.phone}
+                              value={formData.phone}
                               onChange={handleChange}
                               className="border-input focus:border-[#0db0fd]"
                             />
@@ -194,7 +221,7 @@ export default function ContactPage() {
                             <Input
                               id="subject"
                               name="subject"
-                              value={formState.subject}
+                              value={formData.subject}
                               onChange={handleChange}
                               required
                               className="border-input focus:border-[#0db0fd]"
@@ -206,7 +233,7 @@ export default function ContactPage() {
                           <Textarea
                             id="message"
                             name="message"
-                            value={formState.message}
+                            value={formData.message}
                             onChange={handleChange}
                             required
                             rows={6}
