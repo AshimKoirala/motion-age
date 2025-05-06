@@ -80,7 +80,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {/* Social Share Sidebar */}
-            <div className="hidden lg:block">
+            {/* <div className="hidden lg:block">
               <div className="sticky top-24">
                 <div className="flex flex-col gap-4 items-center">
                   <div className="text-sm font-medium text-muted-foreground mb-2">Share</div>
@@ -98,7 +98,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   </Button>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Main Content */}
             <div className="lg:col-span-3">
