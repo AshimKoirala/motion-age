@@ -119,7 +119,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedElement animation="fade-up" className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">Meet Our Team</h2>
@@ -196,7 +196,7 @@ export default function AboutPage() {
             ))}
           </StaggeredAnimation>
         </div>
-      </section>
+      </section> */}
 
       {/* Stats Section */}
       {/* <section className="py-20 bg-[#0db0fd]">

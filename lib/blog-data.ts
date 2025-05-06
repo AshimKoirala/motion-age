@@ -112,7 +112,7 @@ export const blogPosts: BlogPost[] = [
 <p>Stay informed, test frequently, and keep the user at the center of your design decisions.</p>
  `,
   author: {
-    name: "Alex Morgan",
+    name: "Ashim Koirala",
     avatar: "/placeholder.svg?height=80&width=80",
   },
   date: "Jan 15, 2025",
@@ -216,7 +216,7 @@ export const blogPosts: BlogPost[] = [
         <p><strong>Pro tip:</strong> Treat SEO as a long-term investment. Consistency, testing, and adaptation to algorithm changes are key to staying ahead and growing your digital presence over time.</p>
         `,
     author: {
-      name: "Sarah Johnson",
+      name: "Mukesh Yadav",
       avatar: "/placeholder.svg?height=80&width=80",
     },
     date: "May 22, 2025",
@@ -298,7 +298,7 @@ export const blogPosts: BlogPost[] = [
 
     `,
     author: {
-      name: "Michael Chen",
+      name: "Ashim Koirala",
       avatar: "/placeholder.svg?height=80&width=80",
     },
     date: "April 10, 2025",
@@ -391,7 +391,7 @@ export const blogPosts: BlogPost[] = [
 
     `,
     author: {
-      name: "Priya Patel",
+      name: "Ashim Koirala",
       avatar: "placeholder.svg/?height=80&width=80",
     },
     date: "July 3, 2025",
@@ -563,7 +563,7 @@ export const blogPosts: BlogPost[] = [
 
     `,
     author: {
-      name: "Thomas Green",
+      name: "Ashim Koirala",
       avatar: "/placeholder.svg?height=80&width=80",
     },
     date: "August 12, 2025",
@@ -600,7 +600,7 @@ export const blogPosts: BlogPost[] = [
     <p>Mastering video editing is about experimenting and honing your craft. The right combination of techniques can elevate your video production, turning basic footage into a captivating piece of content. Keep learning, keep practicing, and let your creativity flow!</p>
   `,
   author: {
-    name: "John Doe",
+    name: "Mukesh Yadav",
     avatar: "/placeholder.svg?height=80&width=80",
   },
   date: "June 28, 2025",
@@ -637,7 +637,7 @@ export const blogPosts: BlogPost[] = [
     <p>Graphic design is a dynamic field, and staying updated with trends is essential for creating relevant and effective designs. Embrace innovation, experiment with different styles, and let your creativity guide you as you bring these trends into your projects!</p>
   `,
   author: {
-    name: "Jane Smith",
+    name: "Mukesh Yadav",
     avatar: "/placeholder.svg?height=80&width=80",
   },
   date: "July 2, 2025",
@@ -674,7 +674,7 @@ export const blogPosts: BlogPost[] = [
     <p>Digital marketing strategies for 2025 will be driven by technology, personalization, and interactive experiences. As a marketer, staying ahead of these trends and adapting your strategies will ensure that your campaigns are effective and relevant in the ever-changing digital landscape.</p>
   `,
   author: {
-    name: "Mark Johnson",
+    name: "Mukesh Yadav",
     avatar: "/placeholder.svg?height=80&width=80",
   },
   date: "July 5, 2025",
@@ -711,7 +711,7 @@ export const blogPosts: BlogPost[] = [
     <p>Blockchain technology is poised to disrupt multiple industries by offering decentralized, secure, and transparent systems. As we move into the future, blockchain will continue to grow in importance, providing innovative solutions to both everyday challenges and complex industry problems.</p>
   `,
   author: {
-    name: "Alice Cooper",
+    name: "Ashim Koirala",
     avatar: "/placeholder.svg?height=80&width=80",
   },
   date: "June 30, 2025",
@@ -748,7 +748,7 @@ export const blogPosts: BlogPost[] = [
     <p>The rise of remote work and virtual collaboration has transformed how businesses operate. As technology continues to advance, remote work will become even more efficient and accessible. Embracing this change and fostering effective collaboration will be essential for success in the future workplace.</p>
   `,
   author: {
-    name: "Tom Harris",
+    name: "Mukesh Adhikari",
     avatar: "/placeholder.svg?height=80&width=80",
   },
   date: "July 1, 2025",
@@ -785,7 +785,7 @@ export const blogPosts: BlogPost[] = [
     <p>AI-generated content is transforming the marketing landscape. By embracing AI-powered tools, businesses can streamline content creation, improve SEO, and deliver personalized experiences to their audience. However, it’s important to remember that AI should complement, not replace, human creativity in content marketing.</p>
   `,
   author: {
-    name: "Sarah Williams",
+    name: "Ramesh shah",
     avatar: "/placeholder.svg?height=80&width=80",
   },
   date: "July 2, 2025",
