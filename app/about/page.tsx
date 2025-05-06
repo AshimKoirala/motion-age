@@ -47,7 +47,7 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-bold">Our Story</h2>
               <div className="mt-6 space-y-6 text-lg text-muted-foreground">
                 <p>
-                  Founded in 2015, Motion Age began with a simple mission: to help businesses navigate the rapidly
+                  Motion Age began with a simple mission: to help businesses navigate the rapidly
                   evolving digital landscape with innovative solutions that drive real results.
                 </p>
                 <p>
