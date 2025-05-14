@@ -17,7 +17,7 @@ import AnimatedElement from "@/components/animated-element"
 import { useToast } from "@/hooks/use-toast"
 import { toast } from "@/components/ui/use-toast"
 
-export default function JobDetailPage({ params }: { params: Promise<{ id: string }> }) {
+export default function JobDetailPage({ params }: { params: { id: string } }) {
   const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
@@ -145,7 +145,6 @@ export default function JobDetailPage({ params }: { params: Promise<{ id: string
                 <span>{job.location}</span>
               </div>
               <div className="flex items-center gap-2">
-                <DollarSign className="h-5 w-5 text-[#0db0fd]" />
                 <span>{job.salary}</span>
               </div>
             </div>
