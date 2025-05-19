@@ -49,11 +49,11 @@ export default function Footer() {
                   Careers
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/works" className="text-sm leading-6 text-muted-foreground hover:text-[#0db0fd]">
                   Our Works
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div>
