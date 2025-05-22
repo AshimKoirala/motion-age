@@ -138,7 +138,7 @@ export default function Carousel({ items, autoPlay = true, interval = 2500, paus
       aria-label="Featured content carousel"
     >
       {/* Carousel container */}
-      <div className="relative h-[500px] md:h-[600px] lg:h-[700px] w-full" aria-live="polite">
+      <div className="relative h-[350px] md:h-[400px] lg:h-[500px] w-full" aria-live="polite">
         {items.map((item, index) => {
           const isCurrentSlide = index === currentIndex
           const isNextSlide = index === (currentIndex + 1) % items.length
