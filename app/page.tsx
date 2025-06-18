@@ -37,7 +37,7 @@ export default function Home() {
       title: "Bringing Your Digital Vision to Life",
       description:
         "Motion Age is your partner in digital transformation. We create stunning websites, powerful apps, and engaging content that drives results.",
-      image: "/banner1.webp?text=Motion Age",
+      image: "/banner1.jpg?text=Motion Age",
       link: "/services",
       linkText: "Our Services",
       isHero: true,
@@ -47,7 +47,7 @@ export default function Home() {
       title: "Web Development",
       description:
         "Custom websites that engage visitors and drive conversions with responsive designs and modern technologies.",
-      image: "/webdev.webp?text=Web Development",
+      image: "/webdev.jpg?text=Web Development",
       link: "/services#web-development",
       linkText: "Learn More",
     },
@@ -56,7 +56,7 @@ export default function Home() {
       title: "App Development",
       description:
         "Native and cross-platform mobile applications that deliver exceptional user experiences on all devices.",
-      image: "/appdev.webp?text=App Development",
+      image: "/appdev.jpg?text=App Development",
       link: "/services#app-development",
       linkText: "Learn More",
     },
@@ -65,7 +65,7 @@ export default function Home() {
       title: "System/Software Development",
       description:
         "Custom software solutions that streamline operations and boost productivity for businesses of all sizes.",
-      image: "/system.webp?text=Software Development",
+      image: "/system.jpg?text=Software Development",
       link: "/services#system-software-development",
       linkText: "Learn More",
     },
@@ -73,7 +73,7 @@ export default function Home() {
       id: "graphic-design",
       title: "Graphic Design",
       description: "Visual storytelling that captures your brand essence and communicates your message effectively.",
-      image: "/graphicdesign.webp?text=Graphic Design",
+      image: "/graphicdesign.jpg?text=Graphic Design",
       link: "/services#graphic-design",
       linkText: "Learn More",
     },
@@ -81,7 +81,7 @@ export default function Home() {
       id: "video-editing",
       title: "Video Editing",
       description: "Professional video content for all platforms that tells your story and keeps viewers engaged.",
-      image: "/videoediting.webp?text=Video Editing",
+      image: "/videoediting.jpg?text=Video Editing",
       link: "/services#video-editing",
       linkText: "Learn More",
     },
@@ -89,7 +89,7 @@ export default function Home() {
       id: "digital-marketing",
       title: "Digital Marketing",
       description: "Comprehensive strategies to grow your online presence and reach your target audience effectively.",
-      image: "/digitalmarketing.webp?text=Digital Marketing",
+      image: "/digitalmarketing.jpg?text=Digital Marketing",
       link: "/services#digital-marketing",
       linkText: "Learn More",
     },
@@ -97,7 +97,7 @@ export default function Home() {
       id: "seo-optimization",
       title: "SEO Optimization",
       description: "Improve visibility and drive organic traffic with strategic search engine optimization techniques.",
-      image: "/seo.webp?text=SEO Optimization",
+      image: "/seo.jpg?text=SEO Optimization",
       link: "/services#seo-optimization",
       linkText: "Learn More",
     },
@@ -105,7 +105,7 @@ export default function Home() {
       id: "pay-per-click",
       title: "Pay Per Click",
       description: "Targeted advertising campaigns that deliver immediate results and maximize your ROI.",
-      image: "/payperclick.webp?text=Pay Per Click",
+      image: "/payperclick.jpg?text=Pay Per Click",
       link: "/services#pay-per-click",
       linkText: "Learn More",
     },
@@ -113,7 +113,7 @@ export default function Home() {
       id: "content-writing",
       title: "Content Writing",
       description: "Engaging, SEO-friendly content that connects with your audience and drives engagement.",
-      image: "/contentwriting.webp?text=Content Writing",
+      image: "/contentwriting.jpg?text=Content Writing",
       link: "/services#content-writing",
       linkText: "Learn More",
     },
@@ -682,14 +682,14 @@ function getRandomBlogPosts(count = 3) {
                 <CardContent>
                   <p className="line-clamp-3 text-muted-foreground mb-4">{post.excerpt}</p>
                   <div className="flex items-center gap-3">
-                    <div className="h-8 w-8 rounded-full overflow-hidden relative">
+                    {/* <div className="h-8 w-8 rounded-full overflow-hidden relative">
                       <Image
                         src={post.author.avatar || "/placeholder.svg"}
                         alt={post.author.name}
                         fill
                         className="object-cover"
                       />
-                    </div>
+                    </div> */}
                     <div>
                       <div className="text-sm font-medium">{post.author.name}</div>
                     </div>
@@ -727,7 +727,7 @@ function getRandomBlogPosts(count = 3) {
               <Button size="lg" variant="secondary" className="bg-white text-[#0db0fd] hover:bg-white/90 animate-pulse">
                 <Link href="/contact">Get in Touch</Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-white text-[#0db0fd] hover:bg-white/90 animate-pulse">
+              <Button size="lg" variant="secondary" className="bg-white text-[#0db0fd] hover:bg-white/90 animate-pulse">
                 <Link href="/services">Explore Services</Link>
               </Button>
             </div>

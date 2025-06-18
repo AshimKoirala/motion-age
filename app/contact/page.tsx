@@ -333,11 +333,11 @@ export default function ContactPage() {
             <p className="mt-4 text-lg text-white/90">
               Contact us today to discuss your project and how we can help you achieve your goals.
             </p>
-            <div className="mt-10">
+            {/* <div className="mt-10">
               <Button size="lg" variant="secondary" className="bg-white text-[#0db0fd] hover:bg-white/90 animate-pulse">
                 Schedule a Consultation
               </Button>
-            </div>
+            </div> */}
           </AnimatedElement>
         </div>
       </section>
