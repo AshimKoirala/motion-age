@@ -179,7 +179,7 @@ ${data.message}
     `
 
     await sendEmailWithAttachment({
-      to: 'info@motionage.com',
+      to: 'motionage1@gmail.com',
       subject: emailSubject,
       body: emailBody,
     })

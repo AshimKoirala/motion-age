@@ -142,7 +142,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-medium text-lg">Email Address</h3>
-                      <p className="text-muted-foreground">info@motionage.com</p>
+                      <p className="text-muted-foreground">motionage1@gmail.com</p>
                     </div>
                   </div>
 
