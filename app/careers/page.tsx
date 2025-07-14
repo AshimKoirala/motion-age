@@ -173,64 +173,77 @@ export default function CareersPage() {
       </section> */}
 
       {/* Current Openings */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold">Current Openings</h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Explore our available positions and find your perfect role
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {jobOpenings.map((job) => (
-              <Card key={job.id} className="border-2 border-transparent hover:border-[#0db0fd] transition-all">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl">{job.title}</CardTitle>
-                      <CardDescription>{job.department}</CardDescription>
-                    </div>
-                    <Badge variant="outline" className="bg-[#0db0fd]/10 text-[#0db0fd] border-none">
-                      {job.type}
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <p className="text-muted-foreground">{job.description}</p>
-                    <div className="flex flex-wrap gap-4 text-sm">
-                      <div className="flex items-center gap-1">
-                        <MapPin className="h-4 w-4 text-[#0db0fd]" />
-                        <span>{job.location}</span>
-                      </div>
-                       {/* <div className="flex items-center gap-1">
-                        <DollarSign className="h-4 w-4 text-[#0db0fd]" />
-                        <span>{job.salary}</span>
-                      </div>  */}
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-4 w-4 text-[#0db0fd]" />
-                        <span>Posted {job.posted}</span>
-                      </div>
-                    </div>
-                    <div className="pt-4">
-                      <Button className="bg-[#0db0fd] hover:bg-[#0db0fd]/90 w-full">
-                        <Link href={`/careers/jobs/${job.id}`}>View Details & Apply</Link>
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <section className="py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold">Current Openings</h2>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            Explore our available positions and find your perfect role
+          </p>
+        </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-lg mb-4">Don't see a position that matches your skills?</p>
+        {jobOpenings.length === 0 ? (
+          <div className="text-center">
+            <p className="text-lg text-muted-foreground mb-6">
+              No current openings at the moment.
+              <br />
+              Submit a general application if you're interested in working with us.
+            </p>
             <Button variant="outline" size="lg">
               <Link href="/careers/jobs/general-application">Submit a General Application</Link>
             </Button>
           </div>
-        </div>
-      </section>
+        ) : (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {jobOpenings.map((job) => (
+                <Card key={job.id} className="border-2 border-transparent hover:border-[#0db0fd] transition-all">
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <CardTitle className="text-xl">{job.title}</CardTitle>
+                        <CardDescription>{job.department}</CardDescription>
+                      </div>
+                      <Badge variant="outline" className="bg-[#0db0fd]/10 text-[#0db0fd] border-none">
+                        {job.type}
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <p className="text-muted-foreground">{job.description}</p>
+                      <div className="flex flex-wrap gap-4 text-sm">
+                        <div className="flex items-center gap-1">
+                          <MapPin className="h-4 w-4 text-[#0db0fd]" />
+                          <span>{job.location}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Clock className="h-4 w-4 text-[#0db0fd]" />
+                          <span>Posted {job.posted}</span>
+                        </div>
+                      </div>
+                      <div className="pt-4">
+                        <Button className="bg-[#0db0fd] hover:bg-[#0db0fd]/90 w-full">
+                          <Link href={`/careers/jobs/${job.id}`}>View Details & Apply</Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <p className="text-lg mb-4">Don't see a position that matches your skills?</p>
+              <Button variant="outline" size="lg">
+                <Link href="/careers/jobs/general-application">Submit a General Application</Link>
+              </Button>
+            </div>
+          </>
+        )}
+      </div>
+          </section>
+
 
       {/* Application Process */}
       <section className="py-20 bg-accent">
